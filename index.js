@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) 
 
 const HORIZON_ENDPOINT = 'http://127.0.0.1:8000'
-const NETWORK_PASSPHRASE = "Public Global Stellar Network ; September 2015"
+const NETWORK_PASSPHRASE = "STELLAR NETWORK; AUGUST 2019"
 
 // Getting instance of Stellar blockchain
 Stellar.Network.use(new Stellar.Network(NETWORK_PASSPHRASE));
@@ -40,7 +40,7 @@ const getFromFaucet = async (req,res) =>{
         const pk = req.body.pk
         if(pk){
             // faucet is our root account. Make sure you replace this value with your key
-            let sourceKeys = Stellar.Keypair.fromSecret("SDQVDISRYN2JXBS7ICL7QJAEKB3HWBJFP2QECXG7GZICAHBK4UNJCWK2");
+            let sourceKeys = Stellar.Keypair.fromSecret("SCSVBO5IITJG5LWGEKH5I2ONAVT57XS5T6BUZKK4NGY5DSOZM6WIGMOJ");
             // loading root account
 	    console.log(sourceKeys.publicKey())
             server.loadAccount(sourceKeys.publicKey())
